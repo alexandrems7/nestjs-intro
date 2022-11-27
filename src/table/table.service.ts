@@ -1,18 +1,19 @@
-import { Injectable } from "@nestjs/common/decorators";
-import { CreateTableDto } from "./dto/create-table.dto";
-import { Table } from "./entities/table.entities";
+import { Injectable } from '@nestjs/common/decorators';
+import { CreateTableDto } from './dto/create-table.dto';
+import { Table } from './entities/table.entity';
+
 @Injectable()
-export class TableService{
-    tables: Table[] = [];
+export class TableService {
+  tables: Table[] = [];
 
-    findAll() {
-        return 'Buscar todos os livros';
-    }
+  findAll() {
+    return this.tables;
+  }
 
-    create(createTableDto: CreateTableDto) {
-        const table: Table = {id: 'random_id', ...createTableDto}
+  create(createTableDto: CreateTableDto) {
+    const table: Table = { id: 'random_id', ...createTableDto };
 
-        this.tables.push(table)
-        return table;
-    }
+    this.tables.push(table);
+    return table;
+  }
 }
