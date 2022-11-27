@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common/decorators";
-
+import { CreateTableDto } from "./dto/create-table.dto";
 @Injectable()
 export class TableService{
 
@@ -7,7 +7,7 @@ export class TableService{
         return 'Buscar todos os livros';
     }
 
-    create() {
+    create(createTableDto: CreateTableDto) {
         return 'cadastrar um livro'
     }
 }
